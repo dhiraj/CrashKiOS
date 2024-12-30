@@ -34,6 +34,8 @@ kotlin {
         publishAllLibraryVariants()
     }
 
+    jvm()
+
     macosX64()
     macosArm64()
     iosX64()
@@ -51,6 +53,11 @@ kotlin {
     tvosX64()
 
     sourceSets {
+        jvmMain {
+            dependencies {
+                implementation(project(":core"))
+            }
+        }
         commonMain {
             dependencies {
                 implementation(project(":core"))

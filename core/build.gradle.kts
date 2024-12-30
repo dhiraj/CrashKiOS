@@ -33,6 +33,8 @@ kotlin {
         publishAllLibraryVariants()
     }
 
+    jvm()
+
     macosX64()
     macosArm64()
     iosX64()
@@ -50,6 +52,11 @@ kotlin {
     tvosX64()
 
     sourceSets {
+        jvmMain {
+            dependencies {
+                implementation(kotlin("stdlib"))
+            }
+        }
         commonTest {
             dependencies {
                 implementation(kotlin("test"))
